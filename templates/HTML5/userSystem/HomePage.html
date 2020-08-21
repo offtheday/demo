@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Admin-HomePage</title>
+        <!--<link rel='stylesheet' type='text/css' href='E:\xlq\vscode\demo\templates\CSS\userSystem\AdminHomePage.css'>-->
+        <link rel='stylesheet' type="text/css" href={% static 'userSystem/AdminHomePage.css' %}>
+    </head>
+
+    <body>
+        <div id='box'>
+            <div id='head'>
+                <nav>
+                    <img id='home' src='' >
+
+                </nav>
+            </div>
+
+            <div id='content'>
+                <div id='pic'>
+                    <label>library</label>
+                    <!--<img src='E:\xlq\vscode\demo\media\library.JPG' onclick='window.open(http://127.0.0.1：8000/library/)'>-->
+                    <img src="{{ MEDIA_URL }}/library.JPG">
+                </div>
+
+                <div id='pic'>
+                    <label>documentManagement</label>
+                    <!--<img src='E:\xlq\vscode\demo\media\document.JPG' onclick='window.open({{ username }} > {{ password })'>-->
+                    <a href='{% url 'userSystem:documentManagement' username password %}'>
+                    <img src="{{ MEDIA_URL }}/document.JPG">
+                    </a>
+  
+                </div>
+
+                <div id='pic'>
+                    <label>reportManagement</label>
+                    <!--<img src='E:\xlq\vscode\demo\media\report.PNG' onclick='window.open(http://127.0.0.1：8000/reportManagement/)'>-->
+                    <img src="{{ MEDIA_URL }}/report.JPG">
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+        #(click)
+    </script>
+</html>

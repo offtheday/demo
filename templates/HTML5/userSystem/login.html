@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf8'>
+        <title>login</title>
+        <link rel="stylesheet" href="{% static 'userSystem/login.css' %}">
+        
+        <!--<link rel="stylesheet" href="E:\xlq\vscode\demo\templates\CSS\login.css">-->
+    </head>
+    <body>
+        
+        <div id="form">
+            <div  id="words"><p>welcome to system manamgement platform!</p><div>
+            
+
+            <form action={% url 'userSystem:login' %} method='post'>
+            {% csrf_token %}
+                <table>
+                    <tr id="head">
+                        <th colspan="2" style="font-size=10em">Login Card</th>
+                    </tr>
+                    <tr id='error_message' display='hide'> {{ error_message3 }}</tr>
+
+                    <tr id='username'>
+                        <td>USERNAME:</td>
+                        <td><input type="text" placeholder="Please enter your username" name='username'></td>
+                    </tr>
+                    <p id='error_message' display='hide'> {{ error_message0 }}</p>
+
+                    <tr id='email'>
+                        <td>Email:</td>
+                        <td><input type="text" placeholder="Please enter your email" name='email'></td>
+                    </tr>
+                    <p id='error_message' display='hide'> {{ error_message1 }}</p>
+
+                    <tr id='password'>
+                        <td>PASSWORD:</td>
+                        <td><input type="password" placeholder="Please enter your pasword" name='password' ></td>
+                    </tr>
+                    <p id='error_message' display='hide'> {{ error_message2 }}</p>
+
+                    <tr id="roleType">
+                        <td>ROLETYPE:</td>
+                        <td>
+                            <input type="text" list="typelist" placeholder="Normal User" >
+                            <datalist id="typelist" name="role">
+                                <option>Normal</option>
+                                <option>Administrator</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <!--
+                    <tr id="Remember">
+                        <td colspan="2"><input type="checkbox" name="Remember">REMEMBER</td>
+                    </tr>-->
+                    
+                    <tr id="loginType">
+                        <td colspan="2">
+                            <button name="login">login</button>
+                    <!-- 
+                        </td>
+                        <td>
+                        -->
+                            <button type="sumbit"><a href={% url 'userSystem:register'%}>register</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
